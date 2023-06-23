@@ -8,9 +8,14 @@ import Image from 'next/image'
 import {useRouter} from 'next/router'
 import {useMemo} from "react";
 import {Card, Typography} from "@mui/material";
+import {styled} from "@mui/system";
 
 const inter = Inter({subsets: ['latin']})
 
+const StyledTitle = styled(Typography)(() => ({
+	color: "primary",
+	fontSize: "2rem",
+}));
 
 export default function Home() {
 	const router = useRouter()
@@ -27,9 +32,9 @@ export default function Home() {
 			</Head>
 			<main className={`${styles.main} ${inter.className}`}>
 				<Box sx={{height: 400, width: '100%'}}>
-					<Typography color="primary" variant="h3" gutterBottom>
+					<StyledTitle color="primary" variant="h3" gutterBottom>
 						User Details
-					</Typography>
+					</StyledTitle>
 					<Card sx={{p: 4, display: 'grid', gridTemplateColumns: "300px 1fr"}}>
 						<Box>
 							<Image
